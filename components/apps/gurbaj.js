@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ReactGA from "react-ga";
+import ReactGA from "react-ga4";
 
 export class AboutGurbaj extends Component {
   constructor() {
@@ -37,7 +37,11 @@ export class AboutGurbaj extends Component {
     localStorage.setItem("about-section", screen);
 
     // google analytics
-    ReactGA.pageview(`/${screen}`);
+    ReactGA.send({
+      hitType: screen,
+      pageview: `/${screen}`,
+      title: screen,
+    });
 
     this.setState({
       screen: this.screens[screen],

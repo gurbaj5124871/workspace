@@ -21,6 +21,13 @@ NEXT_PUBLIC_SERVICE_ID = 'YOUR_SERVICE_ID'
 
 ```
 
+### To make analytics work
+
+- The project uses google analytics 4. Create google analytics account.
+- Create a property in your google analytics account.
+- Go to Admin settings and create a web based data stream for your website.
+- Copy the Measurement id and put `NEXT_PUBLIC_GA4_MEASUREMENT_ID` variable in .env
+
 into it. Replace \*your user id and your service ID with your values in your EmailJS service.
 
 ## This project was made using Create Next App! Here is the scripts that u can run.

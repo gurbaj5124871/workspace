@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Draggable from "react-draggable";
 import Settings from "../apps/settings";
-import ReactGA from "react-ga";
+import ReactGA from "react-ga4";
 import { displayTerminal } from "../apps/terminal";
 
 export class Window extends Component {
@@ -28,14 +28,22 @@ export class Window extends Component {
     this.setDefaultWindowDimenstion();
 
     // google analytics
-    ReactGA.pageview(`/${this.id}`);
+    ReactGA.send({
+      hitType: this.id,
+      pageview: `/${this.id}`,
+      title: this.id,
+    });
 
     // on window resize, resize boundary
     window.addEventListener("resize", this.resizeBoundries);
   }
 
   componentWillUnmount() {
-    ReactGA.pageview("/desktop");
+    ReactGA.send({
+      hitType: "desktop",
+      pageview: "/desktop",
+      title: "desktop",
+    });
     window.removeEventListener("resize", this.resizeBoundries);
   }
 
