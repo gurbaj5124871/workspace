@@ -718,7 +718,7 @@ function Projects() {
     {
       name: "Sitemaps Automation",
       date: "Aug 2022",
-      link: "https://github.com/gurbaj5124871/sitemap-servicem",
+      link: "https://github.com/gurbaj5124871/sitemap-service",
       description: [
         "Automated sitemaps pipeline microservice implemented using nodeJS, nestJS, postgreSQL, apache kafka and aws s3",
       ],
