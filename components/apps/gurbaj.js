@@ -219,24 +219,32 @@ function About() {
         <div className="bg-white absolute rounded-full p-0.5 md:p-1 top-0 transform -translate-y-1/2 right-0"></div>
       </div>
       <ul className=" mt-4 leading-tight tracking-tight text-sm md:text-base w-5/6 md:w-3/4 emoji-list">
-        <li className=" mt-3 list-star">
-          I have over {experienceYear}+ years of experience working in various
-          product based startups in the space of live streaming, productivity,
-          social.{" "}
+        <li className=" list-pc">
+          I possess over {experienceYear}+ years of valuable experience working
+          in diverse product-based startups within the domains of live
+          streaming, productivity, and social platforms.{" "}
         </li>
-        <li className=" mt-3 list-star">
-          Presently i am working at Waitroom. I joined them as a founding senior
-          backend engineer and built the distributed microservice architecture
-          of the system from scratch. I am really proud of what we built as it
-          helped the company raise over 6 million usd. My biggest achievements
-          would be that we hosted huge sessions hosted by Jimmy Wales (Founder
-          of wikipedia), Tan France and many more which had around more than 50K
-          users per session.{" "}
+        <li className=" mt-3 list-building">
+          Currently, I am employed at Waitroom where I serve as a founding
+          senior backend engineer. My role involves spearheading the
+          establishment of a robust distributed microservice architecture from
+          the ground up. The system I helped construct has proven instrumental
+          in the company's success, resulting in a substantial USD $6 million
+          fundraising milestone. I am particularly proud of my contributions to
+          the organisation, particularly in our hosting of sizeable virtual
+          events headlined by renowned personalities such as Jimmy Wales, Tan
+          France, with participation from over 50,000 attendees per session.{" "}
         </li>
-        <li className=" mt-3 list-star">
-          My expertise extends to leading and establishing efficient work
-          processes within a team, mentoring junior engineers and actively
-          participating in the hiring process{" "}
+        <li className=" mt-3 list-time">
+          My professional acumen is not only limited to the mastery of technical
+          skills but also encompasses my ability to steer teams towards optimal
+          productivity. I excel in directing the establishment of streamlined,
+          efficient work processes to guarantee the timely delivery of projects.
+          Being a people-person, I embrace the opportunity to mentor junior
+          engineers, empowering them to hone their skills and achieve their full
+          potential. Additionally, I actively participate in the hiring process,
+          carefully selecting candidates who exhibit the technical expertise and
+          team spirit required to drive impactful results.{" "}
         </li>
         <li className=" mt-3 list-star">
           My present interests: Applying AI/Reinforcement Learning in Large
