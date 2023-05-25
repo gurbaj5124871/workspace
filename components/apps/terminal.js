@@ -63,7 +63,7 @@ export class Terminal extends Component {
       [this.child_directories.projects[2]]:
         "https://github1s.com/gurbaj5124871/sitemap-service/blob/main/README.md",
       [this.child_directories.projects[3]]:
-        "https://github1s.com/gurbaj5124871/chat-microservice-mqtt-broker/blob/main/README.md",
+        "https://github1s.com/gurbaj5124871/chat-microservice-mqtt-broker/blob/master/app.js",
     };
     this.state = {
       terminal: [],
@@ -303,7 +303,7 @@ export class Terminal extends Component {
         if (words[0] === "." || words.length === 0) {
           this.props.openApp("vscode");
         } else if (this.child_directories.projects.includes(rest)) {
-          this.props.openApp("vscode");
+          this.props.openApp("vscode", this.vscodeProjectMap[rest]);
         } else {
           result = "Command '" + main + notFoundPostfix;
         }

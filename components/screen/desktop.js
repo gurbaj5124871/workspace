@@ -31,6 +31,7 @@ export class Desktop extends Component {
         default: false,
       },
       showNameBar: false,
+      app_args: {},
     };
   }
 
@@ -165,7 +166,8 @@ export class Desktop extends Component {
       disabled_apps = {},
       favourite_apps = {},
       overlapped_windows = {},
-      minimized_windows = {};
+      minimized_windows = {},
+      app_args = {};
     let desktop_apps = [];
     apps.forEach((app) => {
       focused_windows = {
@@ -193,6 +195,10 @@ export class Desktop extends Component {
         [app.id]: false,
       };
       if (app.desktop_shortcut) desktop_apps.push(app.id);
+      app_args = {
+        ...app_args,
+        [app.id]: null,
+      };
     });
     this.setState({
       focused_windows,
@@ -202,6 +208,7 @@ export class Desktop extends Component {
       overlapped_windows,
       minimized_windows,
       desktop_apps,
+      app_args,
     });
     this.initFavourite = { ...favourite_apps };
   };
@@ -295,6 +302,7 @@ export class Desktop extends Component {
           minimized: this.state.minimized_windows[app.id],
           changeBackgroundImage: this.props.changeBackgroundImage,
           bg_image_name: this.props.bg_image_name,
+          screenArgs: this.state.app_args[app.id],
         };
 
         windowsJsx.push(<Window key={index} {...props} />);
@@ -368,7 +376,7 @@ export class Desktop extends Component {
     return result;
   };
 
-  openApp = (objId) => {
+  openApp = (objId, argData) => {
     // google analytics
     ReactGA.event({
       category: `Open App`,
@@ -380,7 +388,7 @@ export class Desktop extends Component {
 
     if (this.state.minimized_windows[objId]) {
       // focus this app's window
-      this.focus(objId);
+      this.focus(objId, argData);
 
       // set window's last position
       var r = document.querySelector("#" + objId);
@@ -396,7 +404,7 @@ export class Desktop extends Component {
     }
 
     //if app is already opened
-    if (this.app_stack.includes(objId)) this.focus(objId);
+    if (this.app_stack.includes(objId)) this.focus(objId, argData);
     else {
       let closed_windows = this.state.closed_windows;
       let favourite_apps = this.state.favourite_apps;
@@ -431,7 +439,7 @@ export class Desktop extends Component {
         closed_windows[objId] = false; // openes app's window
         this.setState(
           { closed_windows, favourite_apps, allAppsView: false },
-          this.focus(objId)
+          this.focus(objId, argData)
         );
         this.app_stack.push(objId);
       }, 200);
@@ -456,10 +464,10 @@ export class Desktop extends Component {
     this.setState({ closed_windows, favourite_apps });
   };
 
-  focus = (objId) => {
+  focus = (objId, newFocusAppArgData) => {
     // removes focus from all window and
     // gives focus to window with 'id = objId'
-    var focused_windows = this.state.focused_windows;
+    let focused_windows = this.state.focused_windows;
     focused_windows[objId] = true;
     for (let key in focused_windows) {
       if (focused_windows.hasOwnProperty(key)) {
@@ -468,7 +476,12 @@ export class Desktop extends Component {
         }
       }
     }
-    this.setState({ focused_windows });
+
+    // update appArgs
+    const app_args = this.state.app_args;
+    app_args[objId] = newFocusAppArgData;
+
+    this.setState({ focused_windows, app_args });
   };
 
   addNewFolder = () => {

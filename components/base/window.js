@@ -225,6 +225,7 @@ export class Window extends Component {
                 this.props.id === "terminal" ? this.props.addFolder : null
               }
               openApp={this.props.openApp}
+              screenArgs={this.props.screenArgs}
             />
           )}
         </div>
@@ -365,7 +366,7 @@ export class WindowMainScreen extends Component {
       >
         {this.props.addFolder
           ? displayTerminal(this.props.addFolder, this.props.openApp)
-          : this.props.screen()}
+          : this.props.screen(this.props.screenArgs)}
       </div>
     );
   }
