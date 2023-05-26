@@ -29,7 +29,7 @@ export class Window extends Component {
 
     // google analytics
     ReactGA.send({
-      hitType: this.id,
+      hitType: "pageview",
       pageview: `/${this.id}`,
       title: this.id,
     });
@@ -40,7 +40,7 @@ export class Window extends Component {
 
   componentWillUnmount() {
     ReactGA.send({
-      hitType: "desktop",
+      hitType: "pageview",
       pageview: "/desktop",
       title: "desktop",
     });

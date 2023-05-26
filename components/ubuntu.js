@@ -61,7 +61,7 @@ export default class Ubuntu extends Component {
   lockScreen = () => {
     // google analytics
     ReactGA.send({
-      hitType: "lock-screen",
+      hitType: "pageview",
       pageview: "/lock-screen",
       title: "lock-screen",
     });
@@ -79,7 +79,7 @@ export default class Ubuntu extends Component {
 
   unLockScreen = () => {
     ReactGA.send({
-      hitType: "desktop",
+      hitType: "pageview",
       pageview: "/desktop",
       title: "desktop",
     });
@@ -98,7 +98,7 @@ export default class Ubuntu extends Component {
 
   shutDown = () => {
     ReactGA.send({
-      hitType: "switch-off",
+      hitType: "pageview",
       pageview: "/switch-off",
       title: "switch-off",
     });
@@ -114,7 +114,7 @@ export default class Ubuntu extends Component {
 
   turnOn = () => {
     ReactGA.send({
-      hitType: "desktop",
+      hitType: "pageview",
       pageview: "/desktop",
       title: "desktop",
     });

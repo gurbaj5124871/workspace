@@ -38,7 +38,7 @@ export class AboutGurbaj extends Component {
 
     // google analytics
     ReactGA.send({
-      hitType: screen,
+      hitType: "pageview",
       pageview: `/${screen}`,
       title: screen,
     });

@@ -38,7 +38,7 @@ export class Desktop extends Component {
   componentDidMount() {
     // google analytics
     ReactGA.send({
-      hitType: "desktop",
+      hitType: "pageview",
       pageview: "/desktop",
       title: "desktop",
     });
