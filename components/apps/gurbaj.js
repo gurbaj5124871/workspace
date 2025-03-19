@@ -210,7 +210,7 @@ function About() {
         <div className="font-normal ml-1">
           I'm a{" "}
           <span className="text-pink-600 font-bold">
-            Senior Software Engineer!
+            Senior Backend Engineer!
           </span>
         </div>
       </div>
@@ -221,34 +221,28 @@ function About() {
       <ul className=" mt-4 leading-tight tracking-tight text-sm md:text-base w-5/6 md:w-3/4 emoji-list">
         <li className=" list-pc">
           I possess over {experienceYear}+ years of valuable experience working
-          in diverse product-based startups within the domains of live
-          streaming, productivity, and social platforms.{" "}
+          in diverse product-based startups within the fields of AI, Blockchain etc, specialising in Backend, Data and Devops with
+          intermediate level of frontend.{" "}
         </li>
         <li className=" mt-3 list-building">
-          Currently, I am employed at Waitroom where I serve as a founding
-          senior backend engineer. My role involves spearheading the
-          establishment of a robust distributed microservice architecture from
-          the ground up. The system I helped construct has proven instrumental
+          Currently, I am employed at Range.org where I spearheaded the design and development of a scalable blockchain monitoring
+          and forensics platform that processed over 100 million transactions per day,
+          implemented real-time alerting with 99.9% uptime, and published innovative work on Sybil detection heuristics.{" "}
+        </li>
+        <li className=" mt-3 list-building">
+          Previously at Rumi.ai, I served as a founding senior backend engineer and the system I helped construct has proven instrumental
           in the company's success, resulting in a substantial USD $6 million
-          fundraising milestone. I am particularly proud of my contributions to
-          the organisation, particularly in our hosting of sizeable virtual
-          events headlined by renowned personalities such as Jimmy Wales, Tan
-          France, with participation from over 50,000 attendees per session.{" "}
+          fundraising milestone. I architected a secure, AI-enhanced video meeting platform—developing real-time meeting summarization with GPT-4,
+          dynamic recording services, and advanced analytics pipelines—while also leading key hiring initiatives that expanded the high-performing backend engineering team.{" "}
         </li>
         <li className=" mt-3 list-time">
-          My professional acumen is not only limited to the mastery of technical
-          skills but also encompasses my ability to steer teams towards optimal
-          productivity. I excel in directing the establishment of streamlined,
-          efficient work processes to guarantee the timely delivery of projects.
-          Being a people-person, I embrace the opportunity to mentor junior
-          engineers, empowering them to hone their skills and achieve their full
-          potential. Additionally, I actively participate in the hiring process,
-          carefully selecting candidates who exhibit the technical expertise and
-          team spirit required to drive impactful results.{" "}
+        I am not just about technical skills — I also know how to lead teams to work at their best.
+        I am skilled at setting up efficient processes that keep projects on schedule.
+        I enjoy mentoring junior engineers and helping them grow their skills, and I am actively involved in hiring,
+        choosing candidates who bring both the technical know-how and the team spirit needed to make a real impact.{" "}
         </li>
         <li className=" mt-3 list-star">
-          My present interests: Applying AI/Reinforcement Learning in Large
-          Language Models{" "}
+          My present interests: Quantization, Fine Tuning and Applying Reinforcement Learning on Large Language Models.{" "}
         </li>
       </ul>
     </>
@@ -292,13 +286,10 @@ function Skills() {
             <strong className="text-ubt-gedit-orange">
               Leadership and Empowered Accountability :
             </strong>{" "}
-            Exhibiting innate qualities of a leader, adept at taking proactive
-            measures to address challenges and establishing structure amidst
-            chaos, while deriving immense gratification from inspiring and
-            guiding others to reach their fullest potential. Unafraid of
-            venturing into uncharted territories, embracing accountability for
-            any setbacks, and judiciously communicating insights that underlie
-            consequential decisions.
+            I naturally step into leadership roles, taking proactive steps to tackle challenges and bring structure to chaos.
+            There is nothing more rewarding to me than inspiring and guiding others to reach their full potential.
+            I am not afraid to take risks or explore uncharted territory, and I take full responsibility for any setbacks along the way.
+            Clear, thoughtful communication is key for me, especially when it comes to making important decisions that have a real impact.
           </div>
         </li>
         <li className=" list-arrow text-sm md:text-base mt-4 leading-tight tracking-tight">
@@ -307,22 +298,16 @@ function Skills() {
             <strong className="text-ubt-gedit-orange">
               Work Processes and Collaboration :
             </strong>{" "}
-            Proficient in devising and implementing solutions to optimise
-            workflow efficiencies and expedite project timelines within the
-            teams, whilst fostering a culture of collaboration anchored on lucid
-            and unambiguous communication.
+            I excel at finding and implementing solutions that streamline workflows and help teams work more efficiently, ultimately speeding up project timelines.
+            I am passionate about creating a collaborative environment where clear and open communication is at the heart of everything we do.
           </div>
         </li>
         <li className=" list-arrow text-sm md:text-base mt-4 leading-tight tracking-tight">
           <div>
             {" "}
             <strong className="text-ubt-gedit-orange">Hiring :</strong>{" "}
-            Proactively engaging in the intricate hiring process, which
-            encompasses meticulous evaluations of both technical proficiency and
-            behavioral patterns, alongside the vital consideration of cultural
-            fit, and afterwards, facilitating a supportive and encouraging
-            transition for the newly acquired personnel to instantly assimilate
-            into the work environment.
+            I take an active role in the hiring process, carefully evaluating both technical skills and behavioural traits while ensuring a strong cultural fit.
+            But it does not stop there — once new team members come on board, I focus on making their transition smooth and welcoming, helping them feel at home and ready to contribute from day one.
           </div>
         </li>
       </ul>
@@ -708,7 +693,16 @@ function Skills() {
 }
 
 function Projects() {
-  const project_list = [
+  const project_list = [    
+    {
+    name: "RAG App Deepseek",
+    date: "Feb 2025",
+    link: "https://github.com/gurbaj5124871/rag-app-deepseek",
+    description: [
+      "A RAG (Retrieval-Augmented Generation) application which combines retrieval-based and generative approaches to improve the accuracy and relevance of AI-generated responses.",
+    ],
+    domains: ["Python", "FastAPI", "Machine Learning", "AI", "Milvus", "ollama", "deepseek"],
+    },
     {
       name: "Workflow Schedular Runtime",
       date: "Feb 2023",
@@ -716,7 +710,7 @@ function Projects() {
       description: [
         "Service to schedule tasks/jobs and process them in background at scale",
       ],
-      domains: ["Temporal", "NodeJS", "NestJS", "Typescript", "PostgreSQL"],
+      domains: ["NodeJS", "Typescript", "NestJS", "PostgreSQL", "Temporal"],
     },
     {
       name: "URL Shortener",
@@ -742,15 +736,6 @@ function Projects() {
         "Prisma.io",
         "AWS S3",
       ],
-    },
-    {
-      name: "IoT Chat",
-      date: "May 2019",
-      link: "https://github.com/gurbaj5124871/chat-microservice-mqtt-broker",
-      description: [
-        "MQTT broker pub/sub based chat service which can deliver super light packets over internet",
-      ],
-      domains: ["MQTT", "NodeJS", "Javascript", "Cassandra"],
     },
   ];
 
